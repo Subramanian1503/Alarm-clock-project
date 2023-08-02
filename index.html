@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body class="text-center">
+    <section id="alarm_clock_section">
+
+        <!-- current time -->
+        <section id="current_time_display_container" class="text-center">
+
+        </section>
+
+        <section id="create_alarm-section">
+
+            <!-- show time display section -->
+            <div id="set_alarm_time">
+                <input type="number" id="hour_input" placeholder="00" min="0" max="11" class="input_box" required>
+                <input type="number" id="minute_input" placeholder="00" min="0" max="59" class="input_box" required>
+                <input type="number" id="second_input" placeholder="00" min="0" max="59" class="input_box" required>
+                <select name="time_convention" id="time_convention" class="input_select">
+                    <option value="AM"> AM</option>
+                    <option value="PM"> PM</option>
+                </select>
+            </div>
+
+            <div id="create_alarm_button">
+                <button id="create_alarm-button"> + </button>
+            </div>
+
+        </section>
+
+        <!-- list of alaram set before -->
+        <section id="existing_alarm_list_container">
+
+            <header id="existing-alarm_header">
+                Alarm
+            </header>
+
+            <!-- list of already existing alaram -->
+            <ul id="existing_alarm_list">
+                <!-- already created alarm -->
+                <!-- <li class="existing_alarm">
+
+                    <div id="marked_time_display">
+                        04: 05: 49 PM
+                    </div>
+
+                    <div class="delete_existing_alarm_button">
+                        <button id="delete_alarm_button">Delete Alarm</button>
+                    </div>
+                </li> -->
+            </ul>
+        </section>
+    </section>
+    <script src="./index.js"></script>
+</body>
+
+</html>
