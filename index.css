@@ -6,7 +6,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-image: url("https://www.hdwallpapers.in/download/red_brick_wall_background_hd_brick-1366x768.jpg");
+    background-image: url("./images/red_brick_wall_background_hd_brick-1366x768.jpg");
     backdrop-filter: blur(8px);
     opacity: 10;
 }

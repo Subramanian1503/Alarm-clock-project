@@ -114,15 +114,24 @@ function deleteAlarm(event) {
     }
 }
 
+
+// Run this function for every 500 miliseconds
 setInterval(function () {
+
+    // Get current time
     var today = new Date();
     var currentHour = today.getHours();
     var currentMinute = today.getMinutes();
     var currentSecond = today.getSeconds();
+
+    // Set the current time in the clock display
     document.getElementById('current_time_display_container').innerHTML =
         currentHour + ":" + currentMinute + ":" + currentSecond;
 
+    // Check if the current time matches with any existing alarm created    
     for (let index = 0; index < already_existing_alarms.length; index++) {
+
+        // If AM check with the direct time itself
         if (already_existing_alarms[index].time_conversion == "AM") {
             console.log(already_existing_alarms[index].hours + ":" + already_existing_alarms[index].minutes);
             if (already_existing_alarms[index].hours == currentHour && already_existing_alarms[index].minutes == currentMinute && already_existing_alarms[index].seconds == currentSecond) {
@@ -130,6 +139,7 @@ setInterval(function () {
             }
         }
         else {
+            // If PM then reduce the current hour with 12 to match with 24 hours format
             if (already_existing_alarms[index].hours == (currentHour - 12) && already_existing_alarms[index].minutes == currentMinute && already_existing_alarms[index].seconds == currentSecond) {
 
                 alert("Time is " + currentHour + ":" + currentMinute + ":" + currentSecond)
@@ -140,8 +150,8 @@ setInterval(function () {
 }, 500);
 
 
-
-
-// handle required events
+// Handle the create alarm event
 create_alarm_button.addEventListener("click", create_alarm);
+
+// Handle all the click events
 document.addEventListener("click", deleteAlarm);
